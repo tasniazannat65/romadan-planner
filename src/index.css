@@ -1,0 +1,55 @@
+/* Playfair Display */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+/* Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@import "tailwindcss";
+@plugin "daisyui";
+@plugin "daisyui/theme" {
+  name: "light";
+  default: true;
+
+  --color-primary: #0E7C7B;     
+  --color-secondary: #17BEBB;   
+  --color-accent: #F4C430;     
+  
+  --color-base-100: #FFFDF6;   
+  --color-base-200: #F7F3E9;
+  --color-base-300: #EDE7D9;
+
+  --color-neutral: #2D3748;      
+  --color-success: #2E8B57;      
+  --color-warning: #E9A319;
+  --color-error: #D64545;
+}
+
+@plugin "daisyui/theme" {
+  name: "dark";
+
+  --color-primary: #00A896;     
+  --color-secondary: #028090;   
+  --color-accent: #FFD166;      
+
+  --color-base-100: #0B132B;     
+  --color-base-200: #1C2541;
+  --color-base-300: #111827;
+
+  --color-neutral: #94A3B8;      
+  --color-success: #06D6A0;
+  --color-warning: #FFB703;
+  --color-error: #EF476F;
+}
+
+.glow-accent {
+  box-shadow: 0 0 20px rgba(255, 209, 102, 0.4);
+}
+
+.playfair-display {
+  font-family: "Playfair Display", serif;
+ 
+}
+
+.poppins {
+  font-family: "Poppins", sans-serif;
+}
