@@ -39,8 +39,9 @@ const Navbar = () => {
     <>
      
 
-      <div className={`nb-wrapper${scrolled ? " scrolled" : ""}`} ref={menuRef}>
-        <div className="nb-pill max-w-7xl mx-auto">
+      <div   className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? "bg-base-100 shadow-md" : "bg-transparent"} `}
+ ref={menuRef}>
+        <div className="nb-pill max-w-7xl mx-auto ">
 
           {/* Logo */}
           <NavLink to="/" className="nb-logo">
