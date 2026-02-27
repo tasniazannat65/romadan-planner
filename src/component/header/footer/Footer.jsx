@@ -4,7 +4,7 @@ import { FaMosque } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="bg-base-200 mt-16 border-t border-primary/20">
+    <footer className="bg-base-300 mt-16 border-t border-primary/20">
 
       <div className="max-w-7xl mx-auto px-6 py-12">
 
