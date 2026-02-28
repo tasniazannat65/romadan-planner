@@ -90,7 +90,7 @@ const FeaturesSection = () => {
   }, []);
 
   return (
-    <section className="relative pt-16 p  overflow-hidden">
+    <section className="relative pt-16 px-6  overflow-hidden">
 
       {/* Background glow blobs */}
       <div className="absolute -top-32 -right-32 w-96 h-96 rounded-full bg-primary/5 blur-3xl pointer-events-none" />
