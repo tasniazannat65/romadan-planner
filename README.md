@@ -1,16 +1,163 @@
-# React + Vite
+# 🌙 Ramadan Planner  
+A Modern Spiritual Productivity & Progress Tracking Web Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📌 Overview
 
-Currently, two official plugins are available:
+Ramadan Planner is a frontend-focused productivity web application designed to help users organize their daily ibadah, track dua completion, and visualize spiritual progress throughout Ramadan.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The project emphasizes clean architecture, scalable state management, derived analytics, and polished UI/UX implementation using modern React ecosystem tools.
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🎯 Problem It Solves
 
-## Expanding the ESLint configuration
+During Ramadan, users often:
+- Struggle to consistently track daily ibadah
+- Lose visibility of overall spiritual progress
+- Lack structured planning tools
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Ramadan Planner provides:
+- Structured daily planning
+- Completion tracking
+- Real-time progress visualization
+- Motivational feedback through analytics
+
+---
+
+## 🚀 Live Demo
+
+🔗 Live Site: (Add your deployed link)  
+🔗 Repository: (Add GitHub repo link)
+
+---
+
+## 🛠 Tech Stack
+
+**Frontend**
+- React.js
+- React Router v6
+- Redux Toolkit
+
+**State Management**
+- Global state using Redux
+- Derived state using selectors
+- Persistent state via localStorage
+
+**UI & Styling**
+- Tailwind CSS
+- DaisyUI
+- Responsive layout (Mobile-first design)
+
+**Data Visualization**
+- Recharts (Dynamic Pie Chart Analytics)
+
+---
+
+## 🧠 Core Features
+
+### 🕌 1. Daily Planner System
+- Add ibadah tasks
+- Mark tasks as completed
+- Add dua entries
+- Real-time UI updates via Redux
+
+### 📊 2. Progress Analytics Dashboard
+- Ibadah completion percentage
+- Dua completion percentage
+- Overall progress calculation
+- Dynamic Pie Chart rendering
+- Automatic recalculation using selectors
+
+### 🏠 3. Structured Home Experience
+- Hero Section
+- Feature Highlights
+- Planner Preview
+- Progress Overview (Mini Analytics Preview)
+- Motivational Dua Section
+
+### 🌙 4. Ramadan Themed UX
+- Custom crescent loading spinner for route transitions
+- Theme-consistent color system
+- Clean spiritual aesthetic
+- Smooth navigation experience
+
+### 💾 5. Persistent State Management
+- Custom `loadState` and `saveState` logic
+- Redux store persistence via localStorage
+- No backend required
+- Data remains after refresh
+
+---
+
+
+### Key Architectural Decisions
+
+- Separation of UI and state logic
+- Redux slices for domain-specific logic
+- Selectors for derived calculations
+- Lightweight custom persistence layer
+- Route-level loading UX enhancement
+
+---
+
+## 📈 Progress Calculation Logic
+
+- Ibadah Completion = Completed Ibadah / Total Ibadah
+- Dua Completion = Completed Dua / Total Dua
+- Overall Progress = Average of Ibadah & Dua percentage
+- Real-time recalculation triggered by Redux state updates
+
+---
+
+## 🎨 UX Design Considerations
+
+- Minimal but meaningful CTAs
+- Logical section hierarchy
+- Motivational flow: Plan → Reflect → Measure
+- Clean and distraction-free interface
+- Avoided overuse of animations
+- Route-level custom loading for smooth experience
+
+---
+
+## 📚 What This Project Demonstrates
+
+✔ Advanced Redux state management  
+✔ Derived state via selectors  
+✔ Custom state persistence implementation  
+✔ Data visualization integration  
+✔ Component-driven architecture  
+✔ UX-driven layout decisions  
+✔ Product-level thinking  
+
+---
+
+## 🔮 Potential Future Improvements
+
+- User authentication
+- Backend integration (Node / Firebase)
+- Streak tracking system
+- Quran / Hadith API integration
+- Dark / Light theme toggle
+- Multi-user support
+
+---
+## 📸 Screenshots
+
+![Ramadan Planner Home Page](./src/assets/screenshot/homepage.png)
+
+---
+
+## 👨‍💻 Author
+
+Tasnia Zannat  
+Frontend Developer  
+
+GitHub: (https://github.com/tasniazannat65)  
+LinkedIn: (https://www.linkedin.com/in/tasnia-zannat/)
+
+---
+
+## 📄 License
+
+MIT License
