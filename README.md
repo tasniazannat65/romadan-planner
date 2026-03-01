@@ -138,7 +138,6 @@ Ramadan Planner provides:
 - Backend integration (Node / Firebase)
 - Streak tracking system
 - Quran / Hadith API integration
-- Dark / Light theme toggle
 - Multi-user support
 
 ---

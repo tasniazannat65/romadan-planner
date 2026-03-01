@@ -34,6 +34,7 @@ const Planner = () => {
     const completedDuas = duas.filter((d)=> d.completed).length;
     return (
          <div className="min-h-screen bg-base-200 py-12 px-6">
+          <title>Romadan Planner | Planner</title>
 
       {/* ── Page Header ── */}
       <div className="max-w-7xl mx-auto mb-10">

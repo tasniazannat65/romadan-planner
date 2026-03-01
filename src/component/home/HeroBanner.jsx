@@ -33,13 +33,13 @@ const HeroBanner = () => {
         <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
 
           <NavLink to="/planner">
-            <button className="btn btn-primary px-8 text-base rounded-md">
+            <button className="btn btn-primary hover:btn-secondary px-8 text-base rounded-full">
               Start Planning
             </button>
           </NavLink>
 
           <NavLink to="/progress">
-            <button className="btn btn-outline btn-accent px-8 rounded-md text-base transition">
+            <button className="btn btn-outline btn-accent px-8 rounded-full text-base transition">
               View Progress
             </button>
           </NavLink>

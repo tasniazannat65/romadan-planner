@@ -8,6 +8,7 @@ import HomeProgressSection from '../component/home/HomeProgressSection';
 const Home = () => {
     return (
         <div>
+            <title>Romadan Planner | Home </title>
             <section>
                 <HeroBanner/>
             </section>
