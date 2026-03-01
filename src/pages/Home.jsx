@@ -3,6 +3,7 @@ import HeroBanner from '../component/home/HeroBanner';
 import FeaturesSection from '../component/home/FeaturesSection';
 import DuaSection from '../component/home/DuaSection';
 import HomePlannerSection from '../component/home/HomePlannerSection';
+import HomeProgressSection from '../component/home/HomeProgressSection';
 
 const Home = () => {
     return (
@@ -16,9 +17,13 @@ const Home = () => {
             <section>
                 <HomePlannerSection/>
             </section>
-            <section>
+             <section>
                 <DuaSection/>
             </section>
+            <section>
+                <HomeProgressSection/>
+            </section>
+           
             
         </div>
     );
