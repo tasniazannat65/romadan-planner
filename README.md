@@ -26,7 +26,7 @@ Ramadan Planner provides:
 
 ## 🚀 Live Demo
 
-    🔗 Live Site: https://ramadan-planner-web.netlify.app/  
+    🔗 Live Site: https://ramadan-planner-web.netlify.app/
 
     🔗 Repository: https://github.com/tasniazannat65/romadan-planner.git
 
