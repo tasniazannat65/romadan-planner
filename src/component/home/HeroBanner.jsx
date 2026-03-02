@@ -18,19 +18,19 @@ const HeroBanner = () => {
       {/* Content */}
       <div className="relative z-10 max-w-4xl space-y-6">
 
-        <h1 className="playfair-display text-4xl md:text-6xl font-bold text-white leading-tight">
+        <h1 className="playfair-display text-3xl md:text-6xl font-bold text-white leading-tight">
           Make This Ramadan <br />
           <span className="text-accent glow-accent px-3 rounded-lg">
             Meaningful
           </span>
         </h1>
 
-        <p className="poppins text-gray-200 text-lg md:text-xl max-w-2xl mx-auto">
+        <p className="poppins text-gray-200 text-md md:text-xl max-w-2xl mx-auto">
           Track your prayers, set daily goals, and improve yourself spiritually.
           Build discipline and consistency throughout this blessed month.
         </p>
 
-        <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+        <div className="flex flex-col sm:flex-row gap-2 md:gap-4 justify-center pt-2 md:pt-4">
 
           <NavLink to="/planner">
             <button className="btn btn-primary hover:btn-secondary px-8 text-base rounded-full">
