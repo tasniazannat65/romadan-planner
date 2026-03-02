@@ -16,24 +16,28 @@ const Planner = () => {
     const dispatch = useDispatch();
     const {prayers, quranPages, taraweeh, charity} = useSelector((state)=> state.ibadah);
     const {duas} = useSelector((state)=> state.dua);
-    const [duaInput, setDuaInput] = useState("");
+    const [duaArabic, setDuaArabic] = useState("");
+    const [duaEnglish, setDuaEnglish] = useState("");
     const [editingId, setEditingId] = useState(null);
-    const [editText, setEditText] = useState("");
+    const [editArabic, setEditArabic] = useState("");
+    const [editEnglish, setEditEnglish] = useState("");
     const handleAddDua = ()=> {
-        if(!duaInput.trim())return;
-        dispatch(addDua(duaInput));
-        setDuaInput("");
+        if(!duaArabic.trim() || !duaEnglish.trim())return;
+        dispatch(addDua({arabic: duaArabic, english: duaEnglish}));
+        setDuaArabic("");
+        setDuaEnglish("");
     }
     const handleUpdateDua = ()=> {
-        if(!editText.trim()) return;
-        dispatch(updateDua({id: editingId, newText: editText}));
+        if(!editArabic.trim() || !editEnglish.trim()) return;
+        dispatch(updateDua({id: editingId, newArabic: editArabic, newEnglish: editEnglish}));
         setEditingId(null);
-        setEditText("");
+        setEditArabic("");
+        setEditEnglish("");
     }
     const completedPrayers = prayerList.filter((p)=> prayers[p]).length;
     const completedDuas = duas.filter((d)=> d.completed).length;
     return (
-         <div className="min-h-screen bg-base-200 py-12 px-6">
+         <div className="min-h-screen  py-12 px-6">
           <title>Romadan Planner | Planner</title>
 
       {/* ── Page Header ── */}
@@ -207,18 +211,26 @@ const Planner = () => {
           <div className="px-7 py-6 flex flex-col gap-5 flex-1">
 
             {/* ── Add Du'a ── */}
-            <div className="flex gap-2">
+            <div className="flex flex-col md:flex-row gap-2">
               <input
                 type="text"
-                value={duaInput}
-                onChange={(e) => setDuaInput(e.target.value)}
+                value={duaArabic}
+                onChange={(e) => setDuaArabic(e.target.value)}
                 onKeyDown={(e) => e.key === "Enter" && handleAddDua()}
-                placeholder="Enter new du'a..."
+                placeholder="Enter new du'a in Arabic..."
+                className="poppins flex-1 bg-base-200 border border-primary/10 focus:border-primary/30 rounded-xl px-4 py-2.5 text-sm text-neutral placeholder:text-neutral/40 outline-none transition-colors"
+              />
+              <input
+                type="text"
+                value={duaEnglish}
+                onChange={(e) => setDuaEnglish(e.target.value)}
+                onKeyDown={(e) => e.key === "Enter" && handleAddDua()}
+                placeholder="Enter new du'a in English..."
                 className="poppins flex-1 bg-base-200 border border-primary/10 focus:border-primary/30 rounded-xl px-4 py-2.5 text-sm text-neutral placeholder:text-neutral/40 outline-none transition-colors"
               />
               <button
                 onClick={handleAddDua}
-                className="poppins px-5 py-2.5 bg-primary text-base-100 text-sm font-semibold rounded-xl hover:opacity-90 active:scale-95 transition-all duration-200"
+                className="poppins px-5 py-2.5 bg-primary hover:bg-secondary cursor-pointer text-base-100 text-sm font-semibold rounded-xl hover:opacity-90 active:scale-95 transition-all duration-200"
               >
                 Add
               </button>
@@ -245,12 +257,19 @@ const Planner = () => {
                   }`}
                 >
                   {editingId === dua.id ? (
-                    <div className="flex gap-2">
+                    <div className="flex flex-col flex-1 gap-2">
                       <input
-                        value={editText}
-                        onChange={(e) => setEditText(e.target.value)}
+                        value={editArabic}
+                        onChange={(e) => setEditArabic(e.target.value)}
                         onKeyDown={(e) => e.key === "Enter" && handleUpdateDua()}
-                        className="poppins flex-1 bg-base-100 border border-primary/20 rounded-lg px-3 py-2 text-sm outline-none"
+                        className="amiri text-right  bg-base-100 border border-primary/20 rounded-lg px-3 py-2 text-sm outline-none"
+                        autoFocus
+                      />
+                      <input
+                        value={editEnglish}
+                        onChange={(e) => setEditEnglish(e.target.value)}
+                        onKeyDown={(e) => e.key === "Enter" && handleUpdateDua()}
+                        className="poppins bg-base-100 border border-primary/20 rounded-lg px-3 py-2 text-sm outline-none"
                         autoFocus
                       />
                       <button
@@ -269,15 +288,22 @@ const Planner = () => {
                           onChange={() => dispatch(toggleCompleted(dua.id))}
                           className="checkbox checkbox-success checkbox-sm flex-shrink-0"
                         />
-                        <span
-                          className={`poppins text-sm leading-relaxed truncate transition-all ${
+                       <div className='flex flex-col min-w-0'>
+                         <span
+                          className={`text-right amiri text-lg  transition-all ${
                             dua.completed
                               ? "line-through text-neutral/40"
                               : "text-neutral"
                           }`}
                         >
-                          {dua.text}
+                          {dua.arabic}
                         </span>
+                        <span className={`poppins text-sm break-word transition-all ${
+                          dua.completed ? 'line-through text-neutral/40' : 'text-neutral'
+                        }`}>
+                          {dua.english}
+                        </span>
+                       </div>
                       </div>
 
                       <div className="flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0">
@@ -293,7 +319,8 @@ const Planner = () => {
                         <button
                           onClick={() => {
                             setEditingId(dua.id);
-                            setEditText(dua.text);
+                            setEditArabic(dua.arabic);
+                            setEditEnglish(dua.english);
                           }}
                           className="w-7 h-7 rounded-lg flex items-center justify-center text-sm text-neutral/40 hover:text-primary hover:bg-primary/10 transition-colors"
                           title="Edit"

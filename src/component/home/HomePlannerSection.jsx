@@ -203,13 +203,22 @@ const HomePlannerSection = () => {
                       onChange={() => dispatch(toggleCompleted(dua.id))}
                       className="checkbox checkbox-success checkbox-xs flex-shrink-0"
                     />
-                    <span
-                      className={`poppins text-sm truncate transition-all ${
-                        dua.completed ? "line-through text-neutral/40" : "text-neutral"
-                      }`}
-                    >
-                      {dua.text}
-                    </span>
+                   <div className='flex flex-col min-w-0'>
+                         <span
+                          className={`text-right amiri text-lg  transition-all ${
+                            dua.completed
+                              ? "line-through text-neutral/40"
+                              : "text-neutral"
+                          }`}
+                        >
+                          {dua.arabic}
+                        </span>
+                        <span className={`poppins text-sm break-word transition-all ${
+                          dua.completed ? 'line-through text-neutral/40' : 'text-neutral'
+                        }`}>
+                          {dua.english}
+                        </span>
+                       </div>
                   </div>
 
                   <button
@@ -255,7 +264,7 @@ const HomePlannerSection = () => {
           </p>
           <button
             onClick={() => navigate("/planner")}
-            className="group/btn poppins inline-flex items-center gap-3 bg-primary text-base-100 font-semibold text-sm px-7 py-3 rounded-full shadow-lg hover:shadow-primary/30 hover:scale-105 transition-all duration-300 whitespace-nowrap"
+            className="group/btn poppins inline-flex items-center gap-3 bg-primary hover:bg-secondary cursor-pointer text-base-100 font-semibold text-sm px-7 py-3 rounded-full shadow-lg hover:shadow-primary/30 hover:scale-105 transition-all duration-300 whitespace-nowrap"
           >
             Go to Full Planner
             <span className="inline-block transition-transform duration-300 group-hover/btn:translate-x-1">→</span>

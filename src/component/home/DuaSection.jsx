@@ -142,7 +142,7 @@ const DuaSection = () => {
         >
           <Link
             to="/planner"
-            className="group/btn poppins inline-flex items-center gap-3 bg-primary text-base-100 font-semibold text-sm px-8 py-3.5 rounded-full shadow-lg hover:shadow-primary/30 hover:scale-105 transition-all duration-300"
+            className="group/btn poppins inline-flex items-center gap-3 bg-primary hover:bg-secondary cursor-pointer text-base-100 font-semibold text-sm px-8 py-3.5 rounded-full shadow-lg hover:shadow-primary/30 hover:scale-105 transition-all duration-300"
           >
             Begin Your Planner
             <span className="inline-block transition-transform duration-300 group-hover/btn:translate-x-1">→</span>

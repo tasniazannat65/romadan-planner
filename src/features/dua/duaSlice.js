@@ -5,10 +5,12 @@ const initialState = {
 duas: [
     {
         id: 1,
-        text: 'Allahumma innaka ‘afuwwun tuhibbul ‘afwa fa’fu ‘anni.',
+        arabic: 'اللهم إنك عفو تحب العفو فاعفُ عني',
+        english: "O Allah, You are Most Forgiving, and You love forgiveness; so forgive me.",
         completed: false,
         favorite: false
     }
+       
 ]
 }
 
@@ -19,7 +21,8 @@ export const duaSlice = createSlice({
     addDua: (state, action)=> {
         state.duas.push({
             id: nanoid(),
-            text: action.payload,
+            arabic: action.payload.arabic,
+            english: action.payload.english,
             completed: false,
             favorite: false
         })
@@ -28,10 +31,11 @@ export const duaSlice = createSlice({
         state.duas = state.duas.filter((dua)=> dua.id !== action.payload)
     },
     updateDua: (state, action)=>{
-    const {id, newText} = action.payload;
+    const {id, newArabic, newEnglish} = action.payload;
     const dua = state.duas.find((d)=> d.id === id);
     if(dua){
-        dua.text = newText;
+        dua.arabic = newArabic;
+        dua.english = newEnglish;
     }
     },
     toggleCompleted: (state, action)=> {
