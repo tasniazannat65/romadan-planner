@@ -99,7 +99,6 @@
         .nb-logo {
           font-family: "Playfair Display", serif;
           font-weight: 700;
-          font-size: 1.15rem;
           color: var(--color-primary);
           text-decoration: none;
           display: flex;

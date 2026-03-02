@@ -44,7 +44,7 @@ const Navbar = () => {
         <div className="nb-pill max-w-7xl mx-auto">
 
           {/* Logo */}
-          <NavLink to="/" className="nb-logo">
+          <NavLink to="/" className="nb-logo text-md md:text-lg">
             <span className="nb-moon">🌙</span>
             Romadan Planner
           </NavLink>
